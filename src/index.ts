@@ -1,8 +1,8 @@
 import { registerPlugin } from '@capacitor/core';
 
-import type { ClearSalePluginPlugin } from './definitions';
+import { ClearSalePlugin } from './definitions';
 
-const ClearSalePlugin = registerPlugin<ClearSalePluginPlugin>(
+const ClearSalePlugin = registerPlugin<ClearSalePlugin>(
   'ClearSalePlugin',
   {
     web: () => import('./web').then(m => new m.ClearSalePluginWeb()),

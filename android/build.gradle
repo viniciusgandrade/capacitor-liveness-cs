@@ -3,6 +3,8 @@ ext {
     androidxAppCompatVersion = project.hasProperty('androidxAppCompatVersion') ? rootProject.ext.androidxAppCompatVersion : '1.2.0'
     androidxJunitVersion = project.hasProperty('androidxJunitVersion') ? rootProject.ext.androidxJunitVersion : '1.1.2'
     androidxEspressoCoreVersion = project.hasProperty('androidxEspressoCoreVersion') ? rootProject.ext.androidxEspressoCoreVersion : '3.3.0'
+    csPAT = CS_PAT
+    csAndroidVersion = '1.0.7'
 }
 
 buildscript {
@@ -47,6 +49,23 @@ repositories {
     jcenter()
 }
 
+allprojects {
+    repositories {
+        maven {
+            url "https://pkgs.dev.azure.com/CS-Package/ID-Lab-PackagesSDK/_packaging/packages/maven/v1"
+            // valor fornecido pela clear sale
+            name "packages" // valor fornecido pela clear sale
+            credentials {
+                username "CS-Package" // valor fornecido pela clear sale
+                password csPAT // valor fornecido pela clear sale
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -55,4 +74,5 @@ dependencies {
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$androidxJunitVersion"
     androidTestImplementation "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+    implementation "sale.clear.studio:sdk-csliveness:$csAndroidVersion"
 }

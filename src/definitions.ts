@@ -1,3 +1,3 @@
-export interface ClearSalePluginPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+export interface ClearSalePlugin {
+  liveness(options: { keyCS: string }): Promise<void>;
 }
