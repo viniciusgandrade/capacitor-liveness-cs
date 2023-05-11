@@ -13,24 +13,22 @@ npx cap sync
 
 <docgen-index>
 
-* [`echo(...)`](#echo)
+* [`liveness(...)`](#liveness)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### echo(...)
+### liveness(...)
 
 ```typescript
-echo(options: { value: string; }) => Promise<{ value: string; }>
+liveness(options: { keyCS: string; }) => Promise<void>
 ```
 
 | Param         | Type                            |
 | ------------- | ------------------------------- |
-| **`options`** | <code>{ value: string; }</code> |
-
-**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+| **`options`** | <code>{ keyCS: string; }</code> |
 
 --------------------
 

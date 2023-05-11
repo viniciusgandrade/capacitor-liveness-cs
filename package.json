@@ -1,6 +1,6 @@
 {
   "name": "capacitor-liveness-cs",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Plugin nativo para CSLiviness",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,8 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorLivenessCs.podspec"
+    "CapacitorLivenessCs.podspec",
+    "scripts"
   ],
   "author": "",
   "license": "MIT",
@@ -42,7 +43,7 @@
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build",
-    "postinstall": "node scripts/postintall.js"
+    "postinstall": "node scripts/postinstall.js"
   },
   "devDependencies": {
     "@capacitor/android": "^3.0.0",
